@@ -30,7 +30,7 @@ twitter_username: pm_pmenezes
 github_username:  pmmenezes
 
 # Build settings
-theme: minima
+theme: jekyll-theme-dinky
 plugins:
   - jekyll-feed
 

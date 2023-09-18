@@ -15,23 +15,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>terraform</title>
-      <link>https://pmmenezes.github.io/categories/terraform/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pmmenezes.github.io/categories/terraform/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tools</title>
-      <link>https://pmmenezes.github.io/categories/tools/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pmmenezes.github.io/categories/tools/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

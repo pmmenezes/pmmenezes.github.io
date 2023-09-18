@@ -18,53 +18,12 @@ Hugo makes use of a variety of open source projects including:
     </item>
     
     <item>
-      <title></title>
-      <link>https://pmmenezes.github.io/posts/markdown-syntax/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pmmenezes.github.io/posts/markdown-syntax/</guid>
-      <description>&amp;mdash; author: &amp;ldquo;Hugo Authors&amp;rdquo; title: &amp;ldquo;Markdown Syntax Guide&amp;rdquo; date: &amp;ldquo;2019-03-11&amp;rdquo; description: &amp;ldquo;Sample article showcasing basic Markdown syntax and formatting for HTML elements.&amp;rdquo; tags: [ &amp;ldquo;markdown&amp;rdquo;, &amp;ldquo;css&amp;rdquo;, &amp;ldquo;html&amp;rdquo;, ] categories: [ &amp;ldquo;themes&amp;rdquo;, &amp;ldquo;syntax&amp;rdquo;, ] series: [&amp;ldquo;Themes Guide&amp;rdquo;] aliases: [&amp;ldquo;migrate-from-jekyl&amp;rdquo;] &amp;mdash;  This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://pmmenezes.github.io/posts/math-typesetting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pmmenezes.github.io/posts/math-typesetting/</guid>
-      <description>&amp;mdash; author: Hugo Authors title: Math Typesetting date: 2019-03-08 description: A brief guide to setup KaTeX math: true &amp;mdash; Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.
-In this example we will be using KaTeX
- Create a partial under /layouts/partials/math.html Within this partial reference the Auto-render Extension or host these scripts locally. Include the partial in your templates like so:  {{ if or .</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://pmmenezes.github.io/posts/placeholder-text/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pmmenezes.github.io/posts/placeholder-text/</guid>
-      <description>&amp;mdash; author: &amp;ldquo;Hugo Authors&amp;rdquo; title: &amp;ldquo;Placeholder Text&amp;rdquo; date: &amp;ldquo;2019-03-09&amp;rdquo; description: &amp;ldquo;Lorem Ipsum Dolor Si Amet&amp;rdquo; tags: [ &amp;ldquo;markdown&amp;rdquo;, &amp;ldquo;text&amp;rdquo;, ] &amp;mdash; Lorem est tota propiore conpellat pectoribus de pectora summo. Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://pmmenezes.github.io/posts/rich-content/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pmmenezes.github.io/posts/rich-content/</guid>
-      <description>&amp;mdash; author: &amp;ldquo;Hugo Authors&amp;rdquo; title: &amp;ldquo;Rich Content&amp;rdquo; date: &amp;ldquo;2019-03-10&amp;rdquo; description: &amp;ldquo;A brief description of Hugo Shortcodes&amp;rdquo; tags: [ &amp;ldquo;shortcodes&amp;rdquo;, &amp;ldquo;privacy&amp;rdquo;, ] &amp;mdash; Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.
- YouTube Privacy Enhanced Shortcode    Twitter Simple Shortcode .twitter-tweet { font: 14px/1.45 -apple-system,BlinkMacSystemFont,&#34;Segoe UI&#34;,Roboto,Oxygen-Sans,Ubuntu,Cantarell,&#34;Helvetica Neue&#34;</description>
-    </item>
-    
-    <item>
       <title>Terraform Basics Commands </title>
-      <link>https://pmmenezes.github.io/posts/emoji-support/</link>
+      <link>https://pmmenezes.github.io/posts/2023-09-17-terraform_basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://pmmenezes.github.io/posts/emoji-support/</guid>
-      <description>&lt;h1 id=&#34;terraform-basic-commands&#34;&gt;Terraform Basic Commands&lt;/h1&gt;
-&lt;h1 id=&#34;emoji-can-be-enabled-in-a-hugo-project-in-a-number-of-ways&#34;&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/h1&gt;
-&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;</description>
+      <guid>https://pmmenezes.github.io/posts/2023-09-17-terraform_basic/</guid>
+      <description>Terraform Basic Commands   </description>
     </item>
     
   </channel>

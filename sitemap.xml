@@ -5,14 +5,6 @@
     <loc>https://pmmenezes.github.io/about/</loc>
     <lastmod>2023-09-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://pmmenezes.github.io/posts/markdown-syntax/</loc>
-  </url><url>
-    <loc>https://pmmenezes.github.io/posts/math-typesetting/</loc>
-  </url><url>
-    <loc>https://pmmenezes.github.io/posts/placeholder-text/</loc>
-  </url><url>
-    <loc>https://pmmenezes.github.io/posts/rich-content/</loc>
-  </url><url>
     <loc>https://pmmenezes.github.io/categories/</loc>
   </url><url>
     <loc>https://pmmenezes.github.io/tags/iac/</loc>
@@ -27,7 +19,7 @@
   </url><url>
     <loc>https://pmmenezes.github.io/categories/terraform/</loc>
   </url><url>
-    <loc>https://pmmenezes.github.io/posts/emoji-support/</loc>
+    <loc>https://pmmenezes.github.io/posts/2023-09-17-terraform_basic/</loc>
   </url><url>
     <loc>https://pmmenezes.github.io/categories/tools/</loc>
   </url>

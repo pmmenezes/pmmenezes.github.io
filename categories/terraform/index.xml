@@ -8,13 +8,11 @@
     <language>en</language><atom:link href="https://pmmenezes.github.io/categories/terraform/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Terraform Basics Commands </title>
-      <link>https://pmmenezes.github.io/posts/emoji-support/</link>
+      <link>https://pmmenezes.github.io/posts/2023-09-17-terraform_basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://pmmenezes.github.io/posts/emoji-support/</guid>
-      <description>&lt;h1 id=&#34;terraform-basic-commands&#34;&gt;Terraform Basic Commands&lt;/h1&gt;
-&lt;h1 id=&#34;emoji-can-be-enabled-in-a-hugo-project-in-a-number-of-ways&#34;&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/h1&gt;
-&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;</description>
+      <guid>https://pmmenezes.github.io/posts/2023-09-17-terraform_basic/</guid>
+      <description>Terraform Basic Commands   </description>
     </item>
     
   </channel>

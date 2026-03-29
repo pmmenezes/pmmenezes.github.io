@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+	const articles = await getCollection('articles');
+	return articles.map(article => ({
+		params: { slug: article.id },
+		props: { article },
+	}));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+
+<BaseLayout title={`${article.data.title} - InfrasCode.dev`} description={article.data.description}>
+	<main class="article-page">
+		<article class="container editorial-content">
+			<header class="article-header">
+				<span class="artigo-tag">{article.data.tag}</span>
+				<h1>{article.data.title}</h1>
+				<div class="artigo-meta">
+					<span>{article.data.language}</span> &bull; <span>{article.data.readingTime}</span>
+				</div>
+			</header>
+
+			<div class="markdown-body">
+				<Content />
+			</div>
+
+			<footer class="article-footer">
+				<hr />
+				<div class="next-step">
+					<h3>Gostou deste conteúdo?</h3>
+					<p>Assine nossa newsletter para ser avisado sobre o próximo mergulho técnico.</p>
+					<a href="#newsletter" class="btn btn-primary">Assinar Newsletter</a>
+				</div>
+			</footer>
+		</article>
+	</main>
+</BaseLayout>
+
+<style is:global>
+	.article-page {
+		padding: 4rem 0;
+	}
+	.article-header {
+		margin-bottom: 4rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 2rem;
+	}
+	.article-header h1 {
+		font-size: 3rem;
+		line-height: 1.1;
+		margin-bottom: 1.5rem;
+		letter-spacing: -0.03em;
+	}
+
+	/* Markdown Basic Styles */
+	.markdown-body {
+		font-size: 1.15rem;
+		line-height: 1.8;
+		color: var(--text-primary);
+	}
+	.markdown-body h2 {
+		margin-top: 3rem;
+		margin-bottom: 1.5rem;
+		font-size: 1.75rem;
+	}
+	.markdown-body h3 {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		font-size: 1.4rem;
+	}
+	.markdown-body p {
+		margin-bottom: 1.5rem;
+	}
+	.markdown-body ul, .markdown-body ol {
+		margin-bottom: 1.5rem;
+		padding-left: 1.5rem;
+	}
+	.markdown-body li {
+		margin-bottom: 0.5rem;
+	}
+	.article-footer {
+		margin-top: 6rem;
+	}
+	.article-footer hr {
+		border: 0;
+		border-top: 1px solid var(--border-color);
+		margin-bottom: 3rem;
+	}
+	.next-step {
+		background: var(--bg-secondary);
+		padding: 3rem;
+		border-radius: 12px;
+		text-align: center;
+	}
+	.next-step h3 {
+		margin-bottom: 1rem;
+	}
+	.next-step p {
+		margin-bottom: 2rem;
+		color: var(--text-secondary);
+	}
+
+	@media (max-width: 768px) {
+		.article-header h1 { font-size: 2.25rem; }
+	}
+</style>

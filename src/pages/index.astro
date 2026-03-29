@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// 1. Buscar todos os artigos
+const allArticles = await getCollection('articles');
+
+// 2. Extrair trilhas únicas a partir das pastas (subdiretórios em src/content/articles/)
+const tracks = [...new Set(allArticles.map(post => post.id.split('/')[0]))];
+
+// 3. Formatar nomes das trilhas
+const trackMetadata = {
+	aiops: { title: "AIOps e AI Engineering", status: "NOVA SÉRIE", description: "Roadmap pragmático para Site Reliability Engineers que lidam com Ops." },
+	logs: { title: "Logs e Observabilidade", status: "COMEÇANDO", description: "Troubleshooting com contesto para reduzir MTTR sem adivinhação cega." },
+	redes: { title: "Redes e Fundamentos", status: "SÉRIE ATIVA", description: "A base de comunicação de sistemas distribuídos e conectividade cloud." },
+	cost: { title: "Cloud Cost / FinOps", status: "EM BREVE", description: "Trade-offs financeiros alinhados a SLAs reais antes de jogar IA na nuvem." }
+};
+
+const getTrackInfo = (id) => trackMetadata[id] || { title: id.toUpperCase(), status: "CONTEÚDO", description: `Explorar trilha de ${id}.` };
+---
+
+<BaseLayout title="InfrasCode.dev - Infraestrutura, Engenharia e IA Aplicada">
+	<main>
+		<!-- HERO SECTION -->
+		<section id="hero" class="hero-section">
+			<div class="container">
+				<h1 class="hero-title">Infra + Code + IA Aplicada à Engenharia Real</h1>
+				<p class="hero-subtitle">Mergulhe em problemas concretos resolvidos com fundamentos sólidos de operação, confiabilidade e experimentação com IA. Sem hype, apenas pragmatismo contínuo.</p>
+				<div class="hero-actions">
+					<a href="#destaques" class="btn btn-primary">Ler artigos</a>
+					<a href="#trilhas" class="btn btn-secondary">Explorar trilhas</a>
+				</div>
+				<div class="hero-proof">
+					<span>SRE</span> &bull; <span>DevSecOps</span> &bull; <span>Cloud</span> &bull; <span>AI Engineering</span>
+				</div>
+			</div>
+		</section>
+		
+		<!-- PROPOSTA SECTION -->
+		<section id="proposta" class="proposta-section">
+			<div class="container">
+				<h2 class="section-title">O que você encontra aqui</h2>
+				<div class="proposta-grid">
+					<div class="proposta-card">
+						<h3>Infraestrutura Real</h3>
+						<p>Casos de uso e arquiteturas focadas no mundo real das operações e falhas em escala.</p>
+					</div>
+					<div class="proposta-card">
+						<h3>Fundamentos Técnicos</h3>
+						<p>A base dura e necessária para evitar o caos e construir plataformas resilientes do zero.</p>
+					</div>
+					<div class="proposta-card">
+						<h3>IA Aplicada</h3>
+						<p>O que muda quando IA entra na operação? Ferramental pragmático sem exagero de buzzwords.</p>
+					</div>
+					<div class="proposta-card">
+						<h3>Projetos Práticos</h3>
+						<p>Automação transparente, tooling útil e testes guiados em código aberto.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section id="trilhas" class="trilhas-section">
+			<div class="container">
+				<h2 class="section-title">Trilhas Editoriais</h2>
+				<div class="trilhas-grid">
+					{tracks.map(trackId => {
+						const info = getTrackInfo(trackId);
+						return (
+							<div class="trilha-card">
+								<div class="trilha-status">{info.status}</div>
+								<h3>{info.title}</h3>
+								<p>{info.description}</p>
+								<a href={`#${trackId}`} class="trilha-link">Explorar trilha &rarr;</a>
+							</div>
+						)
+					})}
+				</div>
+			</div>
+		</section>
+
+		<section id="destaques" class="destaques-section">
+			<div class="container">
+				<h2 class="section-title">Artigos em Destaque</h2>
+				<div class="artigos-grid">
+					{allArticles.map((article, index) => (
+						<article class={`artigo-card ${index === 0 ? 'artigo-featured' : ''}`}>
+							<span class="artigo-tag">{article.data.tag}</span>
+							<h3>
+								<a href={article.data.isPublished ? `/articles/${article.id}` : "#"} 
+								   class={!article.data.isPublished ? "btn-waitlist" : ""} 
+								   data-article={article.data.title}>
+									{article.data.title}
+								</a>
+							</h3>
+							<p class="artigo-resumo">{article.data.description}</p>
+							<div class="artigo-meta"><span>{article.data.language}</span> &bull; <span>{article.data.readingTime}</span></div>
+							
+							{article.data.isPublished ? (
+								<a href={`/articles/${article.id}`} class="btn btn-sm btn-outline">Ler artigo</a>
+							) : (
+								<button class="btn btn-sm btn-outline btn-waitlist" data-article={article.data.title}>Em breve</button>
+							)}
+						</article>
+					))}
+				</div>
+			</div>
+		</section>
+		
+		<section id="manifesto" class="manifesto-section">
+			<div class="container">
+				<div class="manifesto-box">
+					<h2>Nossa Abordagem Editorial</h2>
+					<p>O oceano da tecnologia de infraestrutura atual navega em águas difíceis de excesso de promessas e vendas "automágicas". Nós preferimos não usar hype. Publicamos raciocínios e frameworks que julgamos imperativos para quem opera máquinas diariamente — seja mantendo clusters, contendo furos orçamentários com inteligência analítica em planilhas ou plugando agentes corretivos na base. Somos agnósticos a ferramentas pontuais, mas radicalmente opinativos com os fundamentos da observabilidade e escalabilidade.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="newsletter" class="newsletter-section">
+			<div class="container newsletter-container">
+				<h2 id="newsletter-title">Receba os próximos artigos</h2>
+				<p>Junte-se a pessoas pragmáticas construindo e escalando infraestrutura real.</p>
+				
+				<form class="newsletter-form" action="https://infrascode.substack.com/api/v1/free" method="POST" target="_blank">
+					<input type="email" name="email" class="newsletter-input" placeholder="Seu e-mail primário" required>
+					<button type="submit" class="btn btn-primary">Inscrever-se</button>
+				</form>
+				<p class="newsletter-note">Sem spam. Sem métricas vaidosas. Apenas engenharia útil.</p>
+			</div>
+		</section>
+	</main>
+</BaseLayout>

@@ -26,7 +26,8 @@ const getTrackInfo = (id) => ({
 				<h1 class="hero-title">Infra + Code + IA Aplicada à Engenharia Real</h1>
 				<p class="hero-subtitle">Mergulhe em problemas concretos resolvidos com fundamentos sólidos de operação, confiabilidade e experimentação com IA. Sem hype, apenas pragmatismo contínuo.</p>
 				<div class="hero-actions">
-					<a href="#destaques" class="btn btn-primary">Ler artigos</a>
+					<a href="#newsletter" class="btn btn-primary">Participar da Waitlist</a>
+					<a href="#proposta" class="btn btn-secondary">Ver proposta</a>
 				</div>
 				<div class="hero-proof">
 					<span>SRE</span> &bull; <span>DevSecOps</span> &bull; <span>Cloud</span> &bull; <span>AI Engineering</span>
@@ -61,33 +62,7 @@ const getTrackInfo = (id) => ({
 		
 
 
-		<section id="destaques" class="destaques-section">
-			<div class="container">
-				<h2 class="section-title">Artigos em Destaque</h2>
-				<div class="artigos-grid">
-					{allArticles.map((article, index) => (
-						<article class={`artigo-card ${index === 0 ? 'artigo-featured' : ''}`}>
-							<span class="artigo-tag">{article.data.tag}</span>
-							<h3>
-								<a href={article.data.isPublished ? `/articles/${article.id}` : "#"} 
-								   class={!article.data.isPublished ? "btn-waitlist" : ""} 
-								   data-article={article.data.title}>
-									{article.data.title}
-								</a>
-							</h3>
-							<p class="artigo-resumo">{article.data.description}</p>
-							<div class="artigo-meta"><span>{article.data.language}</span> &bull; <span>{article.data.readingTime}</span></div>
-							
-							{article.data.isPublished ? (
-								<a href={`/articles/${article.id}`} class="btn btn-sm btn-outline">Ler artigo</a>
-							) : (
-								<button class="btn btn-sm btn-outline btn-waitlist" data-article={article.data.title}>Em breve</button>
-							)}
-						</article>
-					))}
-				</div>
-			</div>
-		</section>
+
 		
 		<section id="manifesto" class="manifesto-section">
 			<div class="container">

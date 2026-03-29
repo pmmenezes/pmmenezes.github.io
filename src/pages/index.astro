@@ -27,7 +27,6 @@ const getTrackInfo = (id) => ({
 				<p class="hero-subtitle">Mergulhe em problemas concretos resolvidos com fundamentos sólidos de operação, confiabilidade e experimentação com IA. Sem hype, apenas pragmatismo contínuo.</p>
 				<div class="hero-actions">
 					<a href="#destaques" class="btn btn-primary">Ler artigos</a>
-					<a href="#trilhas" class="btn btn-secondary">Explorar trilhas</a>
 				</div>
 				<div class="hero-proof">
 					<span>SRE</span> &bull; <span>DevSecOps</span> &bull; <span>Cloud</span> &bull; <span>AI Engineering</span>
@@ -60,24 +59,7 @@ const getTrackInfo = (id) => ({
 			</div>
 		</section>
 		
-		<section id="trilhas" class="trilhas-section">
-			<div class="container">
-				<h2 class="section-title">Trilhas Editoriais</h2>
-				<div class="trilhas-grid">
-					{tracks.map(trackId => {
-						const info = getTrackInfo(trackId);
-						return (
-							<div class="trilha-card">
-								<div class="trilha-status">{info.status}</div>
-								<h3>{info.title}</h3>
-								<p>{info.description}</p>
-								<a href={`#${trackId}`} class="trilha-link">Explorar trilha &rarr;</a>
-							</div>
-						)
-					})}
-				</div>
-			</div>
-		</section>
+
 
 		<section id="destaques" class="destaques-section">
 			<div class="container">

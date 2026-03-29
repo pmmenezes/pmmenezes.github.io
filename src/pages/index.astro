@@ -8,15 +8,14 @@ const allArticles = await getCollection('articles');
 // 2. Extrair trilhas únicas a partir das pastas (subdiretórios em src/content/articles/)
 const tracks = [...new Set(allArticles.map(post => post.id.split('/')[0]))];
 
-// 3. Formatar nomes das trilhas
-const trackMetadata = {
-	aiops: { title: "AIOps e AI Engineering", status: "NOVA SÉRIE", description: "Roadmap pragmático para Site Reliability Engineers que lidam com Ops." },
-	logs: { title: "Logs e Observabilidade", status: "COMEÇANDO", description: "Troubleshooting com contesto para reduzir MTTR sem adivinhação cega." },
-	redes: { title: "Redes e Fundamentos", status: "SÉRIE ATIVA", description: "A base de comunicação de sistemas distribuídos e conectividade cloud." },
-	cost: { title: "Cloud Cost / FinOps", status: "EM BREVE", description: "Trade-offs financeiros alinhados a SLAs reais antes de jogar IA na nuvem." }
-};
+// 3. Função para formatar o nome da trilha (ex: "ai-ops" para "Ai Ops")
+const formatTrackName = (id) => id.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
-const getTrackInfo = (id) => trackMetadata[id] || { title: id.toUpperCase(), status: "CONTEÚDO", description: `Explorar trilha de ${id}.` };
+const getTrackInfo = (id) => ({ 
+	title: formatTrackName(id), 
+	status: "SÉRIE ATIVA", 
+	description: `Explore conteúdos focados em ${formatTrackName(id)} para Engenharia de Infraestrutura.` 
+});
 ---
 
 <BaseLayout title="InfrasCode.dev - Infraestrutura, Engenharia e IA Aplicada">

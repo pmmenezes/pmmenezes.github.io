@@ -5,16 +5,14 @@ import { getCollection } from 'astro:content';
 // 1. Buscar todos os artigos
 const allArticles = await getCollection('articles');
 
-// 2. Extrair trilhas únicas a partir das pastas (subdiretórios em src/content/articles/)
-const tracks = [...new Set(allArticles.map(post => post.id.split('/')[0]))];
+// 2. Extrair trilhas únicas a partir dos metadados (frontmatter) 'track'
+const tracks = [...new Set(allArticles.map(post => post.data.track))].filter(Boolean);
 
-// 3. Função para formatar o nome da trilha (ex: "ai-ops" para "Ai Ops")
-const formatTrackName = (id) => id.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-
-const getTrackInfo = (id) => ({ 
-	title: formatTrackName(id), 
+// 3. Estruturação dos dados da trilha
+const getTrackInfo = (trackName) => ({ 
+	title: trackName, 
 	status: "SÉRIE ATIVA", 
-	description: `Explore conteúdos focados em ${formatTrackName(id)} para Engenharia de Infraestrutura.` 
+	description: `Explore conteúdos focados em ${trackName} para Engenharia de Infraestrutura.` 
 });
 ---
 

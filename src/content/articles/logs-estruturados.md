@@ -2,6 +2,8 @@
 title: "Logs estruturados para ambientes reais"
 description: "Abandone o grep manual. Entenda como JSON logs e chaves bem definidas transformam incidentes numa consulta rápida e exata."
 tag: "Logs"
+track: "Observabilidade"
+tags: ["Logs", "Troubleshooting"]
 readingTime: "4 min leitura"
 language: "PT"
 isPublished: false

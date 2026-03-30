@@ -7,7 +7,9 @@ const articles = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		tag: z.string(),
+		tag: z.string(), // Label ou categoria curta ("Tutorial", "Concept")
+		track: z.string(), // A trilha principal que ele pertence ("AIOps", etc)
+		tags: z.array(z.string()).default([]), // Marcadores secundários
 		readingTime: z.string(),
 		language: z.enum(['PT', 'EN']),
 		isPublished: z.boolean().default(false),
